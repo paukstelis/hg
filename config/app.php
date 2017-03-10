@@ -4,7 +4,7 @@ return [
 
     /* Custom Config */
     'custom' => [
-        'ip' => '185.34.52.15'
+        'ip' => '***.**.**.**'
     ],
 
     'game' => [
