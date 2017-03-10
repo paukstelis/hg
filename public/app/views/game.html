@@ -1,0 +1,33 @@
+<div class="row" ng-controller="gameController">
+    <div class="col-md-12 text-center">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">HangMan</h3>
+            </div>
+            <div class="panel-body" ng-init="checkGame()">
+                <div ng-show="record" class="text-left">Personal best <b>({{record}})</b></div>
+                <div ng-show="game.inRow" class="text-left">Correct in a row <b>({{game.inRow}})</b><hr></div>
+                <div ng-show="infoMessage"><h1>{{infoMessage}}</h1></div>
+                <div ng-if="!gameOver">
+                    <div ng-if="!infoMessage">
+                        <div class="circle" ng-style="personColour">{{game.guessMissed}}</div><hr>
+                    </div>
+                    <h3 style="letter-spacing: 5px; text-transform: uppercase"><span>{{winWord ? winWord : game.encodeWord}}</span></h3>
+                    <div ng-if="!infoMessage">
+                        <hr>
+                        <div class="letters">
+                            <ul class="list-inline">
+                                <li ng-repeat="letter in letters">
+                                    <button class="btn btn-primary letter-button" ng-disabled="letterDisable[letter.name]" ng-click="checkLetter(letter.name);">{{letter.name}}</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div ng-if="!win"><button class="btn btn-success" ng-click="restartGame()">Restart</button></div>
+        <div ng-if="win"><button class="btn btn-success" ng-click="restartGame(true)">Next</button></div>
+    </div>
+</div>

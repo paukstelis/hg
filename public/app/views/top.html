@@ -1,0 +1,12 @@
+<div class="panel panel-default" data-ng-init="userTop()">
+    <div class="panel-heading">Gamers TOP</div>
+        <div class="panel-body" ng-init="page=1">
+        <li style="list-style: none; padding:7px;" ng-show="userTopas" ng-repeat="userTopa in userTopas track by $index">
+         <b>{{$index+1+(page-1)*10}}.</b> {{userTopa.username}} ({{userTopa.points}} points)
+         <span ng-if="$index == 9">
+          <hr>
+          <button ng-click="userTop(); page=page+1">Next</button>
+         </span>
+        </li>
+    </div>
+</div>
