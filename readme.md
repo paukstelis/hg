@@ -1,4 +1,4 @@
-Laravel API + angularJs front
+Laravel API + AngularJS front
 <br/>
 DEMO: http://hangman.pt8.lt/
 
